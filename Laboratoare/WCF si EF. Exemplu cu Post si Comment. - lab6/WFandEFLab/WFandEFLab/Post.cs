@@ -20,10 +20,10 @@ namespace WFandEFLab
             this.Comment = new HashSet<Comment>();
         }
     
-        public int postId { get; set; }
-        public string description { get; set; }
-        public string domain { get; set; }
-        public System.TimeSpan date { get; set; }
+        public int PostId { get; set; }
+        public string Description { get; set; }
+        public string Domain { get; set; }
+        public System.TimeSpan Date { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comment { get; set; }

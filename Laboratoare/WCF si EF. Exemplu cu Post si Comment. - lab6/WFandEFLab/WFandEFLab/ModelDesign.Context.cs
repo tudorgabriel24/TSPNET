@@ -7,24 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EFDesignFirst
+namespace WFandEFLab
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Model1Container : DbContext
+    public partial class ModelDesignContainer : DbContext
     {
-        public Model1Container()
-            : base("name=Model1Container")
+        public ModelDesignContainer()
+            : base("name=ModelDesignContainer")
         {
+            // Inhibare: lazy loading si creare proxy dinamic.
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Person> PersonSet { get; set; }
+        public virtual DbSet<Post> PostSet { get; set; }
+        public virtual DbSet<Comment> CommentSet { get; set; }
     }
 }

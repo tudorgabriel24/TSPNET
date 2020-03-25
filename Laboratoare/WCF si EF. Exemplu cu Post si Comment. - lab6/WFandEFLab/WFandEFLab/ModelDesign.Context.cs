@@ -27,7 +27,5 @@ namespace WFandEFLab
     
         public virtual DbSet<Post> PostSet { get; set; }
         public virtual DbSet<Comment> CommentSet { get; set; }
-
     }
-    
 }

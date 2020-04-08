@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +15,7 @@ namespace WFandEFLab
                 bool bResult = false;
                 if (this.PostId == 0)
                 {
-
-                    var it = ctx.Entry<Post>(this).State = EntityState.Added;
+                    var it = ctx.Entry<Post>(this).State = System.Data.Entity.EntityState.Added;
                     ctx.SaveChanges();
                     bResult = true;
                 }
@@ -80,9 +78,9 @@ namespace WFandEFLab
                     return bResult;
                 if (this.CommentId == 0)
                 {
-                    ctx.Entry<Comment>(this).State = EntityState.Added;
+                    ctx.Entry<Comment>(this).State = System.Data.Entity.EntityState.Added;
                     Post p = ctx.Posts.Find(this.PostPostId);
-                    ctx.Entry<Post>(p).State = EntityState.Unchanged;
+                    ctx.Entry<Post>(p).State = System.Data.Entity.EntityState.Unchanged;
                     ctx.SaveChanges();
                     bResult = true;
                 }

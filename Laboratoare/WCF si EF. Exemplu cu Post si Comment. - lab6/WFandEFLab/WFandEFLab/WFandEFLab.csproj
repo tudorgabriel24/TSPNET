@@ -50,16 +50,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="APIstatic\API.cs" />
+    <Compile Include="program.cs" />
+    <Compile Include="Comment.cs">
+      <DependentUpon>ModelDesign.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelDesign.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelDesign.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelDesign.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDesign.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelDesign.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelDesign.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Post.cs">
+      <DependentUpon>ModelDesign.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -80,11 +92,20 @@
     <Content Include="ModelDesign.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelDesign.Context.cs</LastGenOutput>
+      <DependentUpon>ModelDesign.edmx</DependentUpon>
     </Content>
     <Content Include="ModelDesign.edmx.sql" />
+    <Content Include="ModelDesign.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelDesign.cs</LastGenOutput>
+      <DependentUpon>ModelDesign.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="API\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

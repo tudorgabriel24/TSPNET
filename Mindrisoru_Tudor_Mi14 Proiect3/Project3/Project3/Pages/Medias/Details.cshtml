@@ -1,0 +1,43 @@
+﻿@page
+@model Project3.Pages.Medias.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Media</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Media.path)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Media.path)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Media.place)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Media.place)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Media.type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Media.type)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Media.LinkMediaPerson)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Media.LinkMediaPerson.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Media.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

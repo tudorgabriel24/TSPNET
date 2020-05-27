@@ -15,5 +15,7 @@ namespace Project3.Data.Data
         }
 
         public DbSet<EntitiFrameworkProject1.Media> Media { get; set; }
+
+        public DbSet<EntitiFrameworkProject1.Person> Person { get; set; }
     }
 }
